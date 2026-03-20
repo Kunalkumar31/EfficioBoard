@@ -49,8 +49,3 @@ git clone https://github.com/your-username/efficioboard.git
 👨‍💻 Author
 
 Kunal Kumar
-
-
----
-
-⭐ If you like this project, don't forget to star the repo!
