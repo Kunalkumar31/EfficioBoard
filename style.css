@@ -88,6 +88,7 @@ section .task-column {
     flex-direction: column;
     gap: var(--padding-m);
     border-radius: var(--border-radius-m);
+    padding: var(--padding-s);
 
 }
 
@@ -102,6 +103,9 @@ section .task-column .heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: var(--padding-m); 
+    font-size: large;
+    font-weight: bold;
 
 
 }
