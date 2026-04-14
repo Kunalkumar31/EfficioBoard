@@ -20,7 +20,7 @@ It provides an intuitive drag-and-drop interface to manage tasks across differen
 
 * HTML
 * CSS
-* JavaScript (Vanilla JS)
+* JavaScript
 
 ---
 
