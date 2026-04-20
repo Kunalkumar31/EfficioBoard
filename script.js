@@ -1,14 +1,14 @@
 const todo = document.querySelector("#todo");
 const progress = document.querySelector("#progress");
 const done = document.querySelector("#done");
-let dragElemet= null;
+let dragElemet = null;
 
 
 const tasks = document.querySelectorAll('.task');
 
 tasks.forEach(tasks => {
     tasks.addEventListener("drag", (e) => {
-     dragElemet=tasks;
+        dragElemet = tasks;
     })
 });
 
@@ -20,20 +20,20 @@ tasks.forEach(tasks => {
 //     progress.classList.remove("hover-over");
 // })
 
-function addDragEventsOnColumn(column){
-    column.addEventListener("dragenter",(e)=>{
+function addDragEventsOnColumn(column) {
+    column.addEventListener("dragenter", (e) => {
         e.preventDefault();
         column.classList.add("hover-over");
     })
-    column.addEventListener("dragleave",(e)=>{
-       e.preventDefault();
+    column.addEventListener("dragleave", (e) => {
+        e.preventDefault();
         column.classList.remove("hover-over");
     })
 
-    column.addEventListener("dragover",(e)=>{
+    column.addEventListener("dragover", (e) => {
         e.preventDefault();
     })
-    column.addEventListener("drop",(e)=>{
+    column.addEventListener("drop", (e) => {
         e.preventDefault();
         column.appendChild(dragElemet);
         column.classList.remove("hover-over");
@@ -44,3 +44,21 @@ function addDragEventsOnColumn(column){
 addDragEventsOnColumn(todo);
 addDragEventsOnColumn(progress);
 addDragEventsOnColumn(done);
+
+
+/*Modal related logic*/
+const toggleModalButton = document.querySelector("#toggle-modal");
+const modalBg= document.querySelector(".modal .bg")
+const modal = document.querySelector(".modal")
+
+toggleModalButton.addEventListener("click",()=>{
+    modal.classList.toggle("active");
+})
+modalBg.addEventListener("click",()=>{
+    modal.classList.remove("active");
+})
+
+
+
+
+/*Modal related logic*/
