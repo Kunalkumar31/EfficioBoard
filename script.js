@@ -6,11 +6,32 @@ const progress = document.querySelector("#progress");
 const done = document.querySelector("#done");
 let dragElemet = null;
 
-if (localStorage.getItem("task")) {
+if (localStorage.getItem("tasks")) {
     const data = JSON.parse(localStorage.getItem("tasks"));
 
+
     for (const col in data) {
-        console.log(data);
+        const column = document.querySelector(`#${col}`);
+        data[col].forEach(task => {
+            const div = document.createElement("div")
+
+            div.classList.add("task")
+            div.setAttribute("draggable", "true")
+
+            div.innerHTML = `
+        <h2>${task.title}</h2>
+        <p>${task.desc}</p>
+        <button>Delete</button>
+        `
+            column.appendChild(div)
+            div.addEventListener("drag", (e) => {
+                dragElemet = div;
+            })
+        })
+
+        const tasks= column.querySelectorAll(".task");
+        const count = column.querySelector(".right");
+        count.innerText=tasks.length;
     }
 }
 
@@ -61,8 +82,6 @@ function addDragEventsOnColumn(column) {
                     desc: t.querySelector('p').innerText
                 }
             })
-
-
 
             localStorage.setItem("tasks", JSON.stringify(taskData));
             count.innerText = tasks.length;
