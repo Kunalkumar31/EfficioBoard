@@ -163,6 +163,8 @@ addTaskButton.addEventListener("click", () => {
     const taskTitle = document.querySelector("#task-title-input").value
     const taskDesc = document.querySelector("#task-desc-input").value
 
+
+
     // const div = document.createElement("div");
     // div.classList.add("task");
     // div.setAttribute("draggable", "true");
@@ -190,6 +192,10 @@ addTaskButton.addEventListener("click", () => {
     //     dragElemet = div;
     // })
     modal.classList.remove("active");
+
+    document.querySelector("#task-title-input").value = "";
+    document.querySelector("#task-desc-input").value = "";
+
 })
 
 
